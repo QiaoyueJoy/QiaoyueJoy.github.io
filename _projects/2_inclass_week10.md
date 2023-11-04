@@ -41,14 +41,14 @@ Data transformations: Already did in first process.
 <!-- these are written in a combo of html and liquid --> 
 
 <div class="left">
-{% include elements/button.html link="https://github.com/vega/vega/blob/main/docs/data/license_chart.json" text="First Plot Data" %}
+{% include elements/button.html link="https://github.com/QiaoyueJoy/QiaoyueJoy.github.io/blob/main/assets/json/city_chart.json" text="First Plot Data" %}
 </div>
 
 <div class="left">
-{% include elements/button.html link="https://github.com/vega/vega/blob/main/docs/data/license_chart.json" text="Second Plot Data" %}
+{% include elements/button.html link="https://github.com/QiaoyueJoy/QiaoyueJoy.github.io/blob/main/assets/json/year_chart.json" text="Second Plot Data" %}
 </div>
 
 <div class="right">
-{% include elements/button.html link="https://github.com/jnaiman/online_cv_public/blob/main/python_notebooks/test_generate_plots.ipynb" text="The Analysis" %}
+{% include elements/button.html link="https://github.com/QiaoyueJoy/QiaoyueJoy.github.io/tree/main/python_notebooks/homework8.ipynb" text="The Analysis" %}
 </div>
 
