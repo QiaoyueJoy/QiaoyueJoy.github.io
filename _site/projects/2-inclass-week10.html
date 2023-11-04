@@ -22,12 +22,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Projects">
-  <meta property="og:description" content="I am definitely not a corgi!">
-  <meta property="og:image" content="https://source.unsplash.com/300x300/?corgi&derpy">
+  <meta property="og:title" content="Homework8">
+  <meta property="og:description" content="Licenses Data">
+  <meta property="og:image" content="assets/pngs/city.png">
 
-  <title>Projects</title>
-  <meta name="description" content="I am definitely not a corgi!">
+  <title>Homework8</title>
+  <meta name="description" content="Licenses Data">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 
@@ -73,43 +73,54 @@
   </div>
 
 </nav>
-    <div class="card-columns m-3 mt-5">
+    <div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1 id="dataset">Dataset:</h1>
+<p>https://github.com/UIUC-iSchool-DataViz/is445_data/raw/main/licenses_fall2022.csv</p>
 
-  <!-- Local Projects -->
-  <div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="/projects/1-vega-lite-project" class="project card text-themed"><img id="vega-lite-example-project-img" class="card-img-top" src="/assets/pngs/cars.png" alt="Vega Lite Example Project" /><div class="card-body">
-      <h5 id="vega-lite-example-project-name" class="card-title">Vega Lite Example Project
-      </h5>
-      <p id="vega-lite-example-project-desc" class="card-text">This is a "showcase" project that uses vega-lite for interactive viz!</p>
-      <p id="vega-lite-example-project-tools" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Python</span><span class="badge badge-pill text-primary border border-primary ml-1">HTML</span><span class="badge badge-pill text-primary border border-primary ml-1">vega-lite</span></p>
-    </div>
-  </a>
+<h1 id="number-of-licenses-issued-in-top-cities">Number of Licenses Issued in Top Cities</h1>
+
+<vegachart schema-url="/assets/json/city_chart.json" style="width: 100%"></vegachart>
+
+<p>This chart shows the Number of Licenses Issued by Top 20 Cities visualization. This bar chart is designed to provide a clear understanding of which cities have the highest number of licenses issued.</p>
+
+<p>Encoding type: I used nominal encoding (<code class="language-plaintext highlighter-rouge">"City:N"</code>) for the x-axis to represent the city names, and quantitative encoding (<code class="language-plaintext highlighter-rouge">"Count:Q"</code>) for the y-axis to represent the number of licenses. Besides, I used a green color scheme (<code class="language-plaintext highlighter-rouge">scale=alt.Scale(scheme='greens')</code>) .</p>
+
+<p>Data transformations: The conversion of the ‘Original Issue Date’ from a string to a datetime object using <code class="language-plaintext highlighter-rouge">pd.to_datetime</code> function. The <code class="language-plaintext highlighter-rouge">format</code>  was set to <code class="language-plaintext highlighter-rouge">'%m/%d/%Y'</code> to match the date format in the dataset. Additionally,  <code class="language-plaintext highlighter-rouge">errors='coerce'</code> ensures that if any string does not match the specified date format, insert a ‘NaT’.</p>
+
+<p>Interactivity: Used <code class="language-plaintext highlighter-rouge">alt.selection_point()</code> on mouse to enhance the chart by highlighting the bar which the user hovers over. This interaction helps in drawing user’s attention to specific city data. Besides, it also makes the chart more easier to read, since there are a lots of cities.</p>
+
+<h1 id="licenses-issued-each-year">Licenses Issued Each Year</h1>
+
+<vegachart schema-url="/assets/json/year_chart.json" style="width: 100%"></vegachart>
+
+<p>This bar chart shows the number of licenses issued each year.</p>
+
+<p>Encoding type: I used ordinal encoding (<code class="language-plaintext highlighter-rouge">"Year:O"</code>) for the x-axis since the years are discrete but ordered, and quantitative encoding (<code class="language-plaintext highlighter-rouge">"Counts:Q"</code>) for the y-axis. There is no color encoding used in this chart.</p>
+
+<p>Data transformations: Already did in first process.</p>
+
+<!-- these are written in a combo of html and liquid -->
+
+<div class="left">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://github.com/vega/vega/blob/main/docs/data/license_chart.json">
+  First Plot Data
+</a>
 </div>
 
-  <div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="/projects/2-inclass-week10" class="project card text-themed"><img id="homework8-img" class="card-img-top" src="/assets/pngs/city.png" alt="Homework8" /><div class="card-body">
-      <h5 id="homework8-name" class="card-title">Homework8
-      </h5>
-      <p id="homework8-desc" class="card-text">Licenses Data</p>
-      <p id="homework8-tools" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Python</span><span class="badge badge-pill text-primary border border-primary ml-1">HTML</span><span class="badge badge-pill text-primary border border-primary ml-1">vega-lite</span></p>
-    </div>
-  </a>
+<div class="left">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://github.com/vega/vega/blob/main/docs/data/license_chart.json">
+  Second Plot Data
+</a>
 </div>
 
-  
-
-
-
-
-  <!-- Remote Projects -->
-  
-
-  
-
-  
+<div class="right">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://github.com/jnaiman/online_cv_public/blob/main/python_notebooks/test_generate_plots.ipynb">
+  The Analysis
+</a>
 </div>
 
 
+</div>
   </main>
   <footer class="mt-auto py-3 text-center">
 
@@ -152,6 +163,17 @@
 
 </footer>
 
+
+<!-- Custom page specific js files -->
+  
+    <script src='/assets/js/vega.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-lite.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-embed.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/justcharts.js' type="text/javascript"></script>
+  
 
 
 
